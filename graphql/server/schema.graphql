@@ -1,0 +1,23 @@
+type Query {
+  greeting: String
+  students: [Student]
+  getStudentByID(id: ID!): Student
+}
+
+type Student {
+  id: ID!
+  firstName: String
+  lastName: String
+  fullName: String
+}
+
+type Mutation {
+  createStudent(collegeID: ID, firstName: String, lastName: String): String
+  signup(input: SignUpInput): String
+}
+
+input SignUpInput {
+  email: String!
+  password: String!
+  name: String!
+}
